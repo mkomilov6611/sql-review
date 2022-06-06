@@ -27,7 +27,7 @@ CREATE TABLE accounts (
     email VARCHAR(255) REFERENCES employees(email) ON DELETE CASCADE,
     password VARCHAR(255) NOT NULL
 );
-- - Intermediate table = > n :n relationships CREATE TABLE projects_employees (
+CREATE TABLE projects_employees (
     id SERIAL PRIMARY KEY,
     employee_id INTEGER REFERENCES employees ON DELETE CASCADE,
     project_id INTEGER REFERENCES projects ON DELETE CASCADE
