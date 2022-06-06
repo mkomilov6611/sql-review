@@ -1,0 +1,9 @@
+CREATE TABLE users(
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL -- ...
+);
+CREATE TABLE users_friends(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users ON DELETE CASCADE,
+    friend_id INTEGER REFERENCES users ON DELETE CASCADE
+);
